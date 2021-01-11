@@ -55,9 +55,12 @@ $ docker run -d -it -v D:\...:/dev/ansible --name ansible-control karatejb/ansib
 
 ### 3. Set SSH public key to Managed node
 
-The container had already generate a new SSH public & private keys in `~/.ssh/`.
+The container had already generated a new SSH public & private keys in `~/.ssh/`.
 
-![](assets\ssh_key.jpg)
+
+├── id_rsa<br />
+├── id_rsa.pub<br />
+└── known_hosts<br />
 
 
 
