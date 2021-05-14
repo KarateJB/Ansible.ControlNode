@@ -2,7 +2,7 @@
 name: Publish Docker images to ACR
 on:
   push:
-      branches: [ master, publish-image ]
+      branches: [ master, publish-image ] # Set which branch to trigger this flow, e.q. [ master, develop ]
 jobs:
   push_images_to_acr:
     name: Push images to ACR
@@ -23,6 +23,6 @@ jobs:
           context: .
           file: ./dockerfile
           push: true
-          tags: ${{ secrets.ACR_REGISTRY }}/ansible-control-node:latest
+          tags: ${{ secrets.ACR_REGISTRY }}/${{ secrets.DOCKER_IMAGE_NAME }}:latest
       - name: Image digest
         run: echo ${{ steps.build_publish_image.outputs.digest }}

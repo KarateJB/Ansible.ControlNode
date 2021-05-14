@@ -2,7 +2,7 @@
 name: Publish Docker images to Docker Hub
 on:
   push:
-      branches: [ master, publish-image ]
+      branches: [ master, publish-image ] # Set which branch to trigger this flow, e.q. [ master, develop ]
 jobs:
   push_images_to_dockerhub:
     name: Push images to Docker Hub
@@ -22,6 +22,6 @@ jobs:
           context: .
           file: ./dockerfile
           push: true
-          tags: karatejb/ansible-control-node:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME}}/${{ secrets.DOCKER_IMAGE_NAME }}:latest
       - name: Image digest
         run: echo ${{ steps.build_publish_image.outputs.digest }}
