@@ -2,7 +2,7 @@
 name: Publish Docker images to Docker Hub
 on:
   push:
-      branches: [ master, publish-image ] # Set which branch to trigger this flow, e.q. [ master, develop ]
+      branches: [ master ] # Set which branch to trigger this flow, e.q. [ master, develop ]
 jobs:
   push_images_to_dockerhub:
     name: Push images to Docker Hub
