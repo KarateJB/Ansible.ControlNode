@@ -12,6 +12,9 @@ RUN apt install -y software-properties-common && \
     apt-get install -y python3.6 && \
     apt-get install -y python3-pip
 
+# Upgrade pip
+RUN pip3 install --upgrade pip
+
 # Install ansible which runs with Python3
 RUN pip3 install ansible
 

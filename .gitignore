@@ -1,2 +1,7 @@
 # Ansible
 *.retry
+
+# vim
+[._]*.sw[a-p]
+*.un~
+*~
